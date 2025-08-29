@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpfdemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Login" Height="300" Width="400" WindowStartupLocation="CenterScreen">
 
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- título -->
+            <RowDefinition Height="*"/>
+            <!-- contenido -->
+            <RowDefinition Height="Auto"/>
+            <!-- botones -->
+        </Grid.RowDefinitions>
+
+        <!-- título -->
+        <TextBlock Text="Iniciar Sesión" 
+                   FontSize="20" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <!-- formulario -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Usuario:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtUsuario" Width="200" Margin="0,0,0,10"/>
+            <TextBlock Text="Contraseña:" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="txtPassword" Width="200" Margin="0,0,0,20"/>
+        </StackPanel>
+
+        <!-- botones abajo -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Content="Ingresar" Width="100" Margin="5" Click="Ingresar_Click"/>
+            <Button Content="Salir" Width="100" Margin="5" Click="Salir_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
